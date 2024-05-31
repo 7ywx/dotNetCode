@@ -10,9 +10,17 @@ public class ChessHandler : MonoBehaviour
     public GameObject emeraldChessItem;
 
     Vector3 nowPosition;
-    Vector3 newWhiteItemPosition = new Vector3(0, 0, 3.2F);
-    Vector3 newEmeraldItemPosition = new Vector3(0, 0, 3.2F);
-    static int count = 1;
+    Vector3 newWhiteItemPosition = new Vector3(7, 0, 3.2F);
+    Vector3 newEmeraldItemPosition = new Vector3(-5, 0, 3.2F);
+    List<List<int>> board = new List<List<int>>(); //棋盘，1：白子，-1：青子，0：空格
+
+    //初始化棋盘
+    for (int i = 0; i < 11; i++)
+    {
+        board.Add(new List<int>(Enumerable.Repeat(0, 11)));
+    }
+
+    static int count = 1; //棋子计数
     /**
      * 实现的棋子移动时，位置吸附在棋盘格子交点处
      */
