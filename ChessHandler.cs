@@ -27,7 +27,7 @@ public class ChessHandler : MonoBehaviour
         nowPosition.x = Mathf.Round(nowPosition.x);
         //将调整后的位置写回到当前棋子的属性
         GetComponent<Renderer>().transform.position = nowPosition;
-        if (count % 2 != 0)
+        if ((count-1) % 2 == 0)
         {
             // 青色棋子
             board[(int)(4 - nowPosition.y), (int)(nowPosition.x + 4)] = 2;
